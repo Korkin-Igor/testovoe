@@ -6,5 +6,8 @@ use App\Http\Controllers\Controller;
 
 class IncomeController extends Controller
 {
-    //
+    public function index()
+    {
+
+    }
 }
