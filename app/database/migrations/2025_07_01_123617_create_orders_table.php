@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('warehouse_id')->constrained()->onDelete('cascade');
             $table->string('order_number')->unique();
             $table->date('order_date');
-            $table->enum('status', ['pending', 'completed', 'cancelled'])->default('pending');
+            $table->enum('status', ['в ожидании', 'завершён', 'отменён'])->default('в ожидании');
             $table->timestamps();
         });
     }

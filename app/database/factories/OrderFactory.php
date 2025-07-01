@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Warehouse;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,7 +21,7 @@ class OrderFactory extends Factory
             'warehouse_id' => Warehouse::factory(),
             'order_number' => 'ORD-' . rand(1000, 9999),
             'order_date' => $this->faker->date(),
-            'status' => $this->faker->randomElement(['pending', 'completed', 'cancelled']),
+            'status' => $this->faker->randomElement(['в ожидании', 'завершён', 'отменён']),
         ];
     }
 }
