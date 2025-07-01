@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Order extends Model
 {
-    public function warehouses(): hasOne
+    public function stocks(): hasOne
     {
-        return $this->hasOne(Warehouse::class);
+        return $this->hasOne(Stock::class);
     }
 
     public function sales(): belongsTo

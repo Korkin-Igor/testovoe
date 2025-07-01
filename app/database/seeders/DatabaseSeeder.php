@@ -5,9 +5,7 @@ namespace Database\Seeders;
 use App\Models\Income;
 use App\Models\Order;
 use App\Models\Sale;
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Warehouse;
+use App\Models\Stock;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,7 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Warehouse::factory(10)->create();
+        Stock::factory(10)->create();
         Order::factory(50)->create();
         Sale::factory(100)->create();
         Income::factory(100)->create();
