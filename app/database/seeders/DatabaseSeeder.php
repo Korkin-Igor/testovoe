@@ -2,8 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Income;
+use App\Models\Order;
+use App\Models\Sale;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Warehouse;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,11 +17,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        Warehouse::factory(10)->create();
+        Order::factory(50)->create();
+        Sale::factory(100)->create();
+        Income::factory(100)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // user для хранения ключа
+        $this->call([
+            UserSeeder::class,
         ]);
     }
 }
