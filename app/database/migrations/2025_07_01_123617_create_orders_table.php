@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('stock_id')->constrained()->onDelete('cascade');
+            $table->foreignId('stock_id')->references('id')->on('stocks')
+                ->onDelete('cascade')->onUpdate('cascade');
             $table->string('order_number')->unique();
             $table->date('order_date');
             $table->enum('status', ['в ожидании', 'завершён', 'отменён'])->default('в ожидании');

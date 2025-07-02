@@ -18,8 +18,8 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
-            'warehouse_id' => Stock::factory(),
-            'order_number' => 'ORD-' . rand(1000, 9999),
+            'stock_id' => Stock::factory(),
+            'order_number' => rand(1000, 9999),
             'order_date' => $this->faker->date(),
             'status' => $this->faker->randomElement(['в ожидании', 'завершён', 'отменён']),
         ];
