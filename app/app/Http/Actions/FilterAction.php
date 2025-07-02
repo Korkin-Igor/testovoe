@@ -3,20 +3,18 @@
 namespace App\Http\Actions;
 
 use App\Http\Requests\MainRequest;
-use App\Models\Income;
 use App\Models\User;
 
-class IncomeFilterAction
+class FilterAction
 {
-    public static function execute(MainRequest $request)
+    public static function execute(MainRequest $request, $query)
+    // query передаем в зависимости от сущности (например: Order::query())
     {
         if ($request->key != User::query()->get('key')[0]['key']) {
             return response()->json([
                 'message' => 'Не доступно для вас.'
             ], 403);
         }
-
-        $query = Income::query();
 
         if ($request->has('date_from')) {
             $query->where('income_date', '>=', $request->date_from);
