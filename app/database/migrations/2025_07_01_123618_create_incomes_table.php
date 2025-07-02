@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('sale_id')->references('id')->on('sales')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->decimal('amount', 10, 2);
-            $table->date('income_date');
+            $table->date('date');
             $table->string('description')->nullable();
             $table->timestamps();
         });

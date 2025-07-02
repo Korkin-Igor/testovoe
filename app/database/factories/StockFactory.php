@@ -14,7 +14,7 @@ class StockFactory extends Factory
         return [
             'name' => $this->faker->company,
             'location' => $this->faker->city,
-            'stock_date' => $this->faker->date(),
+            'date' => $this->faker->date(),
         ];
     }
 }

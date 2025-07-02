@@ -6,6 +6,10 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class MainRequest extends FormRequest
 {
+    public string $key;
+    public string $date_from;
+    public string $date_to;
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -14,11 +18,6 @@ class MainRequest extends FormRequest
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
     public function rules(): array
     {
         return [

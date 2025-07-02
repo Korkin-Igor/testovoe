@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('location')->nullable();
-            $table->date('stock_date');
+            $table->date('date');
             $table->timestamps();
         });
     }

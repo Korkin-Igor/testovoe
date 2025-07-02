@@ -15,7 +15,7 @@ class OrderFactory extends Factory
         return [
             'stock_id' => Stock::factory(),
             'order_number' => fake()->unique()->numberBetween(1, 99999),
-            'order_date' => $this->faker->date(),
+            'date' => $this->faker->date(),
             'status' => $this->faker->randomElement(['в ожидании', 'завершён', 'отменён']),
         ];
     }

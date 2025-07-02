@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('stock_id')->references('id')->on('stocks')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->string('order_number')->unique();
-            $table->date('order_date');
+            $table->date('date');
             $table->enum('status', ['в ожидании', 'завершён', 'отменён'])->default('в ожидании');
             $table->timestamps();
         });

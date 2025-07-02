@@ -16,7 +16,7 @@ class IncomeFactory extends Factory
         return [
             'sale_id' => Sale::factory(),
             'amount' => $this->faker->randomFloat(2, 50, 1000),
-            'income_date' => $this->faker->date(),
+            'date' => $this->faker->date(),
             'description' => $this->faker->sentence(),
         ];
     }

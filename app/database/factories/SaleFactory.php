@@ -20,7 +20,7 @@ class SaleFactory extends Factory
             'quantity' => $quantity,
             'price' => $price,
             'total' => $quantity * $price,
-            'sale_date' => $this->faker->date(),
+            'date' => $this->faker->date(),
         ];
     }
 }
